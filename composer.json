@@ -1,0 +1,20 @@
+{
+    "name": "enginr/manager",
+    "description": "An Enginr project initializer",
+    "minimum-stability": "stable",
+    "require": {
+        "splitbrain/php-cli": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arthuchaut",
+            "email": "arthur.audebrand@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Enginr\\": "lib/"
+        }
+    }
+}
