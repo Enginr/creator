@@ -5,7 +5,7 @@ namespace Enginr;
 use splitbrain\phpcli\{CLI, Options};
 
 class Manager extends CLI {
-    const ENGINR_VERSION = 'v1.0.0-alpha';
+    const ENGINR_VERSION = 'v1.0.1-alpha';
 
     protected function setup(Options $opt): void {
         $opt->setHelp('An Enginr project initializer');
