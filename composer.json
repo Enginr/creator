@@ -3,8 +3,7 @@
     "description": "An Enginr project initializer",
     "minimum-stability": "stable",
     "bin": [
-        "bin/enginr.bat",
-        "bin/enginr.sh"
+        "bin/enginr"
     ],
     "require": {
         "splitbrain/php-cli": "^1.1"
