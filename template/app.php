@@ -13,7 +13,7 @@ $app->set('view', __DIR__ . '/views');
 $app->set('template', 'pug');
 
 $app->use(function($req, $res, $next) {
-    System::log("$req->host $req->method $req->uri");
+    System::log("$req->host:$req->port $req->method $req->uri");
     $next();
 });
 

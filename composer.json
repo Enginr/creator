@@ -2,6 +2,10 @@
     "name": "enginr/manager",
     "description": "An Enginr project initializer",
     "minimum-stability": "stable",
+    "bin": [
+        "bin/enginr.bat",
+        "bin/enginr.sh"
+    ],
     "require": {
         "splitbrain/php-cli": "^1.1"
     },

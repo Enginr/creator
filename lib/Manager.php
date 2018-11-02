@@ -40,19 +40,19 @@ class Manager extends CLI {
         $this->success("Directory $dir successfully created.");
         $this->info('Launching composer initialization ...');
 
-        if (system('cd ./' . $dir . ';composer init') === FALSE)
+        if (system('cd ./' . $dir . '&& composer init') === FALSE)
             die($this->error('Could not init composer'));
 
         $this->success('Composer successfully initialized.');
         $this->info('Trying to install Enginr ...');
 
-        if (system('cd ./' . $dir . ';composer require enginr/enginr ' . self::ENGINR_VERSION) === FALSE)
+        if (system('cd ./' . $dir . '&& composer require enginr/enginr ' . self::ENGINR_VERSION) === FALSE)
             die($this->error('Could not install enginr/enginr.'));
 
         $this->success('enginr/enginr successfully installed.');
         $this->info('Trying to install pug-php/pug ...');
 
-        if (system('cd ./' . $dir . ';composer require pug-php/pug') === FALSE)
+        if (system('cd ./' . $dir . '&& composer require pug-php/pug') === FALSE)
             die($this->error('Could not install pug-php/pug.'));
 
         $this->success('pug-php/pug successfully installed.');
@@ -74,10 +74,16 @@ class Manager extends CLI {
         $this->success('.gitignore successfully created.');
         $this->info('Trying to init git ...');
 
-        if (system('cd ./' . $dir . ';git init') === FALSE)
+        if (system('cd ./' . $dir . '&& git init') === FALSE)
             die($this->error('Could not init git.'));
 
         $this->success('Git was successfully initialized.');
+        $this->info('Trying to commit project ...');
+
+        if (system('cd ./' . $dir . '&& git add . && git commit -m "Initialized project structure"') === FALSE)
+            die($this->error('Could not init git.'));
+
+        $this->success('Commit successfully created.');
         $this->success('Project generating complete.');
         $this->notice("You can go to your project at ./$dir and run 'php app.php' !");
     }
